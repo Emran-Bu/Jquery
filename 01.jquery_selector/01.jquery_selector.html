@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Selector</title>
+</head>
+<body>
+
+    <ul id="test">
+        <li>Apple</li>
+        <li class="item">Apple</li>
+        <li>Apple</li>
+        <li class="item">Apple</li>
+        <li>Apple</li>
+        <li>Apple</li>
+    </ul>
+    
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('#test').css('color', 'red')
+            $("#test li").css("border", "1px solid blue")
+            // $(".item").css("border", "1px solid blue")
+            // $("*").css("border", "1px solid blue")
+            // $("ul li").css("border", "1px solid blue")
+            // $("ul li:first").css("border", "1px solid blue")
+            // $("ul li:last").css("border", "1px solid blue")
+            // $("ul li:eq(2)").css("border", "1px solid blue")
+            // $("ul li:gt(3)").css("border", "1px solid blue")
+            // $("ul li:lt(2)").css("border", "1px solid blue")
+        });
+    </script>
+</body>
+</html>
