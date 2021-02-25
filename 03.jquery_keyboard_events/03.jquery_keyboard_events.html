@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Mouse Events</title>
+    <style>
+        .item{
+            background: red;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="box" class="item">
+        <h1>Heading Tag</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae incidunt sunt cumque, dolores in assumenda.
+        </p>
+    </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('body').keypress(function(){
+                $(this).css('background', 'blue')
+            })
+
+            $('body').keyup(function(){
+                $(this).css('background', 'cyan')
+            })
+
+            $('body').keydown(function(){
+                $(this).css('background', 'tan')
+            })
+        });
+    </script>
+</body>
+</html>
