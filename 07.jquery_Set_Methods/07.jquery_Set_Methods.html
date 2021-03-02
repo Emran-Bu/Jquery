@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Mouse Events</title>
+    <style>
+        .item{
+            background: red;
+            padding: 5px;
+        }
+
+        .yellow{
+            color: cyan;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="box" class="item">
+        <h1>Heading Tag</h1>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae incidunt sunt cumque, dolores in assumenda.
+        </p>
+    </div><br>
+
+    <form action="">
+        <label for="">Name :</label>
+        <input type="text" name="" id="name">
+    </form><br>
+
+    <button id="clickbtn">Set Value</button>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#clickbtn').click(function(){
+                $('#box h1').css('background', 'blue')
+                $('#box h1').css('color', '#fff')
+                $('#box h1').text("Hello Emran")
+
+                // $('#box p').text("This is <b>paragraph</b> tag")
+
+                $('#box p').html("This is <b>paragraph</b> tag")
+
+                $('#box p').attr('class', 'yellow')
+            })
+            // $('#clickbtn').click(function(){
+            //     $('#box h1').toggle('yellow')
+            // })
+
+            $('form #name').val('Emran')
+        });
+    </script>
+</body>
+</html>
