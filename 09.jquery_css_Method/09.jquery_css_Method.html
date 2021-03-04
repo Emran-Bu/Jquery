@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_css_method</title>
+    <style>
+        #test{
+            border: 1px solid;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="test">
+        <h2>Test Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At rerum ex distinctio, voluptate quis hic! Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam, nemo.</p>
+    </div>
+    <button id="addclass">Add Class</button>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#addclass').click(function(){
+            //    $('#test').css('background','pink')
+               $('#test').css({'background':'pink', "border" : "5px dotted blue"})
+            })
+        })
+    </script>
+</body>
+</html>
