@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_on_off_method</title>
+    <style>
+        #box{
+            border: 1px solid palegreen;
+            padding: 15px;
+        }
+
+        .test{
+            background: purple;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>Text box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum nulla, dolorum a quae saepe impedit eaque itaque culpa aspernatur autem!</p>
+    </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        // $(document).ready(function(){
+        //     $('#box').click(function(){
+        //         $(this).css({'background': 'pink', 'cursor': 'pointer'})
+        //     })
+
+        //     $('#box').mouseenter(function(){
+        //         $('#box h2').css({'font-size': '40px', 'color' : 'red' , 'cursor': 'pointer'})
+        //     })
+        // })
+
+        $(document).ready(function(){
+            // $('#box').on('click', function(){
+            //     $(this).css({'background': 'purple', 'cursor': 'pointer'})
+            // })
+
+            // $('#box').on('mouseover', function(){
+            //     $(this).css({'background': 'red', 'cursor': 'pointer'})
+            // })
+
+            // $('#box').on('mouseout', function(){
+            //     $(this).css({'background': 'pink', 'cursor': 'pointer'})
+            // })
+
+            
+            // $('#box').on('mouseover mouseout', function(){
+            //     $(this).toggleClass('test')
+            // })
+
+            $('#box').on({
+                'click' : function(){
+                    $(this).css('background', 'yellow')
+                },
+
+                'mouseover' : function(){
+                    $(this).css('background', 'lightblue')
+                },
+
+                'mouseout' : function(){
+                    $(this).css('background', 'purple')
+                }
+            })
+        })
+    </script>
+</body>
+</html>
