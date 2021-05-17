@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_replaceWith_replaceAll</title>
+    <style>
+        #box{
+            border: 2px solid rebeccapurple;
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>Text Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos expedita eaque fugiat cum voluptatum ipsa culpa odit labore exercitationem error.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos expedita eaque fugiat cum voluptatum ipsa culpa odit labore exercitationem error.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos expedita eaque fugiat cum voluptatum ipsa culpa odit labore exercitationem error.</p>
+    </div><br>
+
+    <button id="replaceWithbtn">ReplaceWith Button</button>
+    <button id="replaceAllbtn">ReplaceAll Button</button>
+
+    
+<script src="js/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#replaceWithbtn').click(function(){
+            $('#box p:nth-child(3').replaceWith('<h2>Emran</h2>')
+
+        })
+
+        $('#replaceAllbtn').click(function(){
+            $('<p>Quos expedita eaque fugiat cum voluptatum ipsa culpa odit labore exercitationem error.</p>').replaceAll('#box p')
+        })
+    })
+</script>
+</body>
+</html>
