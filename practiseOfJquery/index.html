@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>practiceJquery</title>
+</head>
+<body>
+    <div class="prac">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, nihil.</p>
+    </div><br>
+
+    <div id="prac-2">
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia, nihil.</p>
+    </div><br>
+
+    <div class="anim" style="background:blue; height:100px ;width: 100px"> 
+        Emran
+    </div><br>
+
+    <div id="flip"
+    
+    style= "padding: 5px; font-size: 18px; text-align: center; background-color: #555;
+    color: white;
+    border: solid 1px #666;
+    border-radius: 3px;"
+    
+    >Click to slide down panel</div>
+
+    <div style="display: none; padding: 50px; font-size: 18px; text-align: center; background-color: #555;
+    color: white;
+    border: solid 1px #666;
+    border-radius: 3px;" id="panel">Hello world!</div>
+    <br>
+    <button class="animClick">Stop Animation</button>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('.prac').css('background', 'purple')
+
+            var prac = $('.prac')
+            prac.css({'color' : 'white', "padding" : "5px", "text-align": "center"})
+        })
+
+        // 
+
+        $('.prac').hover(function() {
+            alert('you are hover this element')
+        },
+        function() {
+            alert("you are remove mouse fromm element")
+        })
+
+        // 
+
+        $(document).ready(function() {
+            $('#prac-2').on({
+                mouseenter: function() {
+                    $(this).css({"background": "cyan", "color": "white", "padding": "5px"})
+                },
+
+                mouseleave: function(){
+                $(this).css("background-color", "lightblue");
+                },
+
+                click: function() {
+                    alert('you have click')
+                }
+             })
+        })
+
+        // animate part
+
+        $('.anim').hover(function() {
+            $(this).animate({"height": "200px", "width": "200px", "transition": "5s"})
+
+            $(this).animate({"fontSize": "70px"})
+        })
+
+        $('#flip').click(function() {
+            $('#panel').slideDown(5000)
+        })
+
+        $('.animClick').click(function() {
+            $('#panel').stop()
+            console.log('click');
+        })
+
+    </script>
+</body>
+</html>
