@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_wrap_unwrap_method</title>
+    <style>
+        #box{
+            border: 10px solid rebeccapurple;
+            padding: 25px;
+            margin: 20px;
+            height: 250px;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <h2>Text Box <span></span></h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos expedita eaque fugiat cum voluptatum ipsa culpa odit labore exercitationem error.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos expedita eaque fugiat cum voluptatum ipsa culpa odit labore exercitationem error.</p>
+    </div><br>
+
+    <button id="widthbtn">Width</button>
+    <button id="heightbtn">Height</button>
+    <button id="prevent">Refresh</button>
+
+    <button id="high">high</button>
+    <button id="low">low</button>
+    
+<script src="js/jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#widthbtn').click(function(){
+            $('#box h2').css("color" , "lightblue")
+
+            $('#box').width('400px')
+            console.clear()
+            console.log("Width : " + $('#box').width())
+            console.log("InnerWidth : " + $('#box').innerWidth())
+            console.log("OuterWidth : " + $('#box').outerWidth())
+            console.log("OuterWidth(true) : " + $('#box').outerWidth(true))
+        })
+
+        $('#heightbtn').click(function(){
+            $('#box h2').css("color" , "lightblue")
+
+            $('#box').height('300px')
+            console.clear()
+            console.log("Height : " + $('#box').height())
+            console.log("InnerHeight : " + $('#box').innerHeight())
+            console.log("OuterHeight : " + $('#box').outerHeight())
+            console.log("OuterHeight(true) : " + $('#box').outerHeight(true))
+        })
+
+        $('#prevent').click(function(){
+            $('#box').width('300px')
+            $('#box').height('250px')
+            $('#box h2').css("color" , "")
+        })
+
+        $('#high').click(function(){
+           var a = $('#box').width()
+            console.clear()
+            console.log(a)
+        //    $('#box').css("width", (a+5) + "px")
+
+           if (a >= 350 ) {
+            //    alert('width is over')
+            $('#box').css("border" , "10px solid red")
+           } else{
+            $('#box').css("width", (a+5) + "px")
+            $('#box').css("border" , "10px solid rebeccapurple")
+           }
+        })
+
+        $('#low').click(function(){
+           var a = $('#box').width()
+        //    $('#box h2').html("<h2>Text Box ("+ a +") <h2>")
+           $('#box h2 span').html("(" + a + ")")
+       
+            console.clear()
+            console.log(a)
+        //    $('#box').css("width", (a-5) + "px")
+
+           if (a <= 300 ) {
+            //    alert('width is over')
+            $('#box').css("border" , "10px solid red")
+           } else{
+            $('#box').css("width", (a-5) + "px")
+            $('#box').css("border" , "10px solid rebeccapurple")
+           }
+        })
+    })
+</script>
+</body>
+</html>
