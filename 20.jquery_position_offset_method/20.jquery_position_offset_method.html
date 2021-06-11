@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_position_offset_method</title>
+    <style>
+        #box{
+            padding: 20px;
+            border: 1px solid paleturquoise;
+            background: palegoldenrod;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>Text Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque in minima enim minus dolor ipsam atque ab itaque dolore ea!</p>
+    </div><br>
+    <button id="positionbtn">Position</button>
+    <button id="offsetbtn">Offset</button>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#positionbtn').click(function(){
+
+                var x = $('#box h2').position()
+                console.log("Top :" + x.top + " Left :" + x.left)
+            })
+
+            $('#offsetbtn').click(function(){
+
+            $('#box').offset({top:0, left:0})
+            var x = $('#box').offset()
+            console.log("Top :" + x.top + " Left :" + x.left)
+            })
+
+
+        })
+    </script>
+</body>
+</html>
