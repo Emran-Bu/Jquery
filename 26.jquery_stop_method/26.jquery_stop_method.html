@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery Stop Method</title>
+    <style>
+        #box{
+            background: violet;
+            padding: 15px;
+            border: 2px solid tomato;
+            margin-bottom: 10px;
+            width: 100px;
+            height: 100px;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>Text Box</h2>
+    </div>
+
+    <button id="animation">Animate</button>
+    <button id="stopbtn">Stop</button>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#animation').click(function(){
+                $('#box').animate({left: '150px'})
+                $('#box').animate({top: '150px'}, 2000, function(){
+                    $('#box h2').css('color', 'blue')
+                })
+                $('#box').animate({left: '0px'})
+                $('#box').animate({top: '0px'}, 2000, function(){
+                    $('#box h2').css('color', 'red')
+                })
+
+                // $('#box').animate({left: '150px', width : '+=150px', fontSize: '25px', borderWidth: '5px'
+                // })
+
+                // $('#box').animate({
+                //     left: '150px',
+                //     width : '+=150px',
+                //     fontSize: '25px',
+                //     borderWidth: '5px'
+                //     // width : 'toggle',
+                //     // borderRadius : '50%'
+                // })
+            })
+
+            $('#stopbtn').click(function(){
+                    $('#box').stop(true, true)
+                })
+        })
+    </script>
+</body>
+</html>
