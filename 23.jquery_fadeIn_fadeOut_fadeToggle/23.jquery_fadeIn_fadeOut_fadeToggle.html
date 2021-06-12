@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery hide show toggle</title>
+    <style>
+        #box{
+            background: violet;
+            padding: 15px;
+            border: 2px solid tomato;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <h2>Text Box</h2>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad debitis suscipit sequi quas non unde. Numquam natus atque dignissimos labore?</p>
+    </div>
+
+    <button id="fadeoutbtn">Fade Out</button>
+    <button id="fadeinbtn">Fade In</button>
+    <button id="fadetogglebtn">Fade Toggle</button>
+    <button id="fadetobtn">Fade To</button>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#fadeoutbtn').click(function(){
+                $('#box').fadeOut('slow')
+            })
+
+            $('#fadeinbtn').click(function(){
+                $('#box').fadeIn(3000)
+            })
+
+            $('#fadetogglebtn').click(function(){
+                $('#box').fadeToggle()
+            })
+
+            $('#fadetobtn').click(function(){
+                $('#box').fadeTo(1000, 0.3, function() {
+                    console.log('now it is fadeto')
+                })
+            })
+        })
+    </script>
+</body>
+</html>
