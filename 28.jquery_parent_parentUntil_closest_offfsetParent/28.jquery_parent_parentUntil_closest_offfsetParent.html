@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jquery parent parent</title>
+
+    <style>
+        #main-outer{
+            background: yellowgreen;
+            height: 500px;
+            width: 650px;
+            padding: 5px;
+            border: 2px solid magenta;
+        }
+
+        #outer{
+            background: yellow;
+            height: 400px;
+            padding: 5px;
+            border: 2px solid magenta;
+        }
+
+        #inner{
+            background: pink;
+            height: 300px;
+            padding: 5px;
+            border: 2px solid magenta;
+            
+        }
+
+        #inner div{
+            background: cyan;
+            opacity: 0.5;
+            float: left;
+            padding: 60px 35px;
+            margin-left: 15px;
+            margin-right: 20px;
+            border: 2px solid magenta;
+        } 
+    </style>
+</head>
+<body>
+    <div id="main-outer" style="position: relative;">
+        <h2>main outer</h2>
+        <div id="outer">
+            <h2>outer</h2>
+            <div id="inner">
+                <h2 id="child-head">inner</h2>
+
+                <div>A</div>
+                <div>B</div>
+                <div id="child-c">C</div>
+                <div>D</div>
+                <div>E</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // $('#child-c').parent().css('background', 'blue')
+            // $('#child-c').parents().css('background', 'blue')
+            $('#inner').parent().css('background', 'red')
+            $('#inner').parents('#main-outer').css('background', 'cyan')
+            // $('#child-c').parentsUntil('#main-outer').css('background', 'magenta')
+            $('#child-c').offsetParent().css('background', 'lightblue')
+            $('#child-c').closest('div').css('background', 'blue')
+        })
+    </script>
+</body>
+</html>
