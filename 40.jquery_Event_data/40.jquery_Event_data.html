@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_Event_data</title>
+</head>
+<body>
+
+    <div id="box" style="background: turquoise; width: 300px; height: 250px; padding: 10px; cursor: pointer;">
+    
+        <p>0. Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
+
+        <p>1. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem commodi dolorem magni inventore.</p>
+
+        <p>2. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quidem commodi dolorem magni inventore aut unde illo animi, alias consequatur maxime.</p>
+    
+    </div>
+
+    <script src="js/jquery-3.5.1.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('p').each(function(i){
+                $(this).on('click', {value:i}, function(event){
+                    alert(event.data.value);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
